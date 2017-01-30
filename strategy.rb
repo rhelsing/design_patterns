@@ -1,3 +1,5 @@
+#The motive behind the Strategy pattern is to supply the context with an object that knows how to perform some variation on an algorithm.
+
 #extract various strategies for dealing with the data held by a class into its own implementation :)
 
 #Automations if each handler has its own domain and data stored in object relates to implementation and can be arbitrary.
@@ -51,3 +53,16 @@ report = Report.new(HTMLFormatter.new)
 report.output_report
 report.formatter = PlainTextFormatter.new
 report.output_report
+
+#Procs can also be used for strategy pattern
+
+def run_it
+  puts("Before the yield")
+  yield("DUDE")
+  puts("After the yield")
+end
+
+run_it do |x|
+  puts("Hello #{x}")
+  puts('Coming to you from inside the block')
+end
